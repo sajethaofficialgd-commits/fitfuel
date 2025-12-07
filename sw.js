@@ -1,5 +1,5 @@
-// FitTrack India - Service Worker
-const CACHE_NAME = 'fittrack-v1';
+// FitFuel - Service Worker
+const CACHE_NAME = 'fitfuel-v1';
 const urlsToCache = [
     '/',
     '/index.html',
@@ -17,11 +17,11 @@ self.addEventListener('install', event => {
     event.waitUntil(
         caches.open(CACHE_NAME)
             .then(cache => {
-                console.log('FitTrack: Caching app shell');
+                console.log('FitFuel: Caching app shell');
                 return cache.addAll(urlsToCache);
             })
             .catch(err => {
-                console.log('FitTrack: Cache failed', err);
+                console.log('FitFuel: Cache failed', err);
             })
     );
     self.skipWaiting();
@@ -34,7 +34,7 @@ self.addEventListener('activate', event => {
             return Promise.all(
                 cacheNames.map(cacheName => {
                     if (cacheName !== CACHE_NAME) {
-                        console.log('FitTrack: Removing old cache', cacheName);
+                        console.log('FitFuel: Removing old cache', cacheName);
                         return caches.delete(cacheName);
                     }
                 })
@@ -78,6 +78,6 @@ self.addEventListener('fetch', event => {
 // Background sync for offline data
 self.addEventListener('sync', event => {
     if (event.tag === 'sync-data') {
-        console.log('FitTrack: Background sync triggered');
+        console.log('FitFuel: Background sync triggered');
     }
 });

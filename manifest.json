@@ -1,6 +1,6 @@
 {
-    "name": "FitTrack India - Calorie Tracker",
-    "short_name": "FitTrack",
+    "name": "FitFuel - Calorie Tracker",
+    "short_name": "FitFuel",
     "description": "Track your calories, macros, and fitness goals with Indian food database",
     "start_url": "/index.html",
     "display": "standalone",
